@@ -1,0 +1,60 @@
+# Window settings
+[window]
+dimensions = { columns = 100, lines = 50 }
+opacity = 0.88
+
+# Font Settings
+[font]
+size = 15.0
+
+[font.normal]
+family = "Source Code Pro"
+style = "Regular"
+
+[font.bold]
+family = "Source Code Pro"
+style = "Bold"
+
+[font.italic]
+family = "Source Code Pro"
+style = "Italic"
+
+# Cursor Settings
+[cursor]
+style = { shape = "Underline", blinking = "On" }
+
+
+# Color scheme (example - Dracula)
+# [colors.primary]
+# background = "#282A36"
+# foreground = "#F8F8F2"
+
+# [colors.normal]
+# black = "#000000"
+# red = "#FF5555"
+# green = "#50FA7B"
+# yellow = "#F1FA8C"
+# blue = "#BD93F9"
+# magenta = "#FF79C6"
+# cyan = "#8BE9FD"
+# white = "#BFBFBF"
+
+[terminal]
+#shell = { program = "tmux", args = ["new-session"] }
+
+[keyboard]
+bindings = [
+    { key = "Plus", mods = "Control", action = "IncreaseFontSize" },
+    { key = "Equals", mods = "Control", action = "IncreaseFontSize" },
+
+    # Decrease font size (Zoom Out)
+    { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
+
+    # Reset font size
+    { key = "Key0", mods = "Control", action = "ResetFontSize" },
+
+    # Copy/Paste (Linux/Windows convention)
+    { key = "C", mods = "Control|Shift", action = "Copy" },
+    { key = "V", mods = "Control|Shift", action = "Paste" },
+
+]
