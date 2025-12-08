@@ -1,0 +1,6 @@
+theme = "ao"
+[editor.cursor-shape]
+insert = "underline"
+normal = "block"
+select = "block"
+
