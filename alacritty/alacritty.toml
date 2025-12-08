@@ -41,7 +41,9 @@ style = { shape = "Underline", blinking = "On" }
 
 [terminal]
 #shell = { program = "tmux", args = ["new-session"] }
-
+shell = { program = "/bin/zsh", args = ["-l"] }
+[mouse]
+hide_when_typing = true
 [keyboard]
 bindings = [
     { key = "Plus", mods = "Control", action = "IncreaseFontSize" },
