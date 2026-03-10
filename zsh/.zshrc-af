@@ -21,7 +21,7 @@ function afmagic_dashes {
   fi
 }
 
-PS1='${FG[237]}${(l.$(afmagic_dashes)..-.)}'$'\n''${FG[032]}%~$(git_prompt_info)$(hg_prompt_info) ${FG[105]}%(!.#.»)%{$reset_color%} '
+PS1='${FG[237]}${(l.$(afmagic_dashes)..-.)}'$'\n''${FG[032]}%B%c%b$(git_prompt_info)$(hg_prompt_info)%{$reset_color%}'$'\n''${FG[105]}%B%(!.#.»)%b%{$reset_color%} '
 PS2="%{$fg[red]%}\ %{$reset_color%}"
 
 RPS1="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
@@ -56,7 +56,7 @@ alias treea="tree -a"
 alias ls='ls --color=auto'
 alias ll='ls -lah'
 alias grep='grep --color=auto'
-
+alias gcsh='git-commit.sh'
 mkcd() {mkdir -p "$1" && cd "$1" }
 # ── history ──────────────────────────────────────────────────────────────────
 
