@@ -8,15 +8,15 @@ opacity = 0.88
 size = 14.0
 
 [font.normal]
-family = "Source Code Pro"
+family = "SauceCodePro Nerd Font Mono"
 style = "Regular"
 
 [font.bold]
-family = "Source Code Pro"
+family = "SauceCodePro Nerd Font Mono"
 style = "Bold"
 
 [font.italic]
-family = "Source Code Pro"
+family = "SauceCodePro Nerd Font Mono"
 style = "Italic"
 
 # Cursor Settings
