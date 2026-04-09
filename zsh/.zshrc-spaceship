@@ -1,3 +1,8 @@
+# ── tmux auto-start ─────────────────────────────────────────────────────────
+if command -v tmux &>/dev/null && [ -z "$TMUX" ] && [ -z "$INSIDE_EMACS" ] && [ "$TERM_PROGRAM" != "vscode" ]; then
+  tmux attach -t default 2>/dev/null || tmux new-session -s default
+fi
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -22,9 +27,9 @@ source $ZSH/oh-my-zsh.sh
 # ── environment ─────────────────────────────────────────────────────────────
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="/$HOME/.npm-global/bin:$PATH"
 export PGDATA="$HOME/postgres_data"
-export PGHOST="/run/postgresql"
-export EDITOR="hx"
+export PGHOST="/run/postgresql"export EDITOR="hx"
 export VISUAL="hx"
 
 # ── aliases ──────────────────────────────────────────────────────────────────
@@ -45,3 +50,4 @@ HISTFILE=~/.zsh_history
 setopt HIST_IGNORE_DUPS
 setopt SHARE_HISTORY
 setopt HIST_IGNORE_SPACE
+export PATH="$HOME/.npm-global/bin:$PATH"
