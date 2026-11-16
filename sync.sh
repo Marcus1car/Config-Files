@@ -35,6 +35,18 @@ if git diff --cached --quiet -- "${paths[@]}"; then
   exit 0
 fi
 
+# Repo is public: refuse to commit anything that looks like a secret
+if ! command -v gitleaks >/dev/null; then
+  git restore --staged -- "${paths[@]}"
+  echo "gitleaks not installed, nothing committed" >&2
+  exit 1
+fi
+if ! gitleaks git --staged --redact --no-banner --verbose; then
+  git restore --staged -- "${paths[@]}"
+  echo "possible secret in staged configs, nothing committed" >&2
+  exit 1
+fi
+
 changed="$(git diff --cached --name-only -- "${paths[@]}")"
 git commit -m "config sync $(date +%F)" -m "$changed" -- "${paths[@]}"
 
