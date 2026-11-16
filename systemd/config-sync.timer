@@ -1,0 +1,10 @@
+[Unit]
+Description=Monthly config sync to the Config-Files repo
+
+[Timer]
+OnCalendar=monthly
+# Laptop: if it was off on the 1st, run at next login instead of skipping
+Persistent=true
+
+[Install]
+WantedBy=timers.target

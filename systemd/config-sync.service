@@ -1,0 +1,8 @@
+[Unit]
+Description=Sync config files into the Config-Files repo and push
+
+[Service]
+Type=oneshot
+# gcr ssh agent, so git can push over SSH unattended
+Environment=SSH_AUTH_SOCK=%t/gcr/ssh
+ExecStart=%h/Documents/Github/Config-Files/sync.sh
