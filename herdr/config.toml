@@ -1,0 +1,41 @@
+onboarding = false
+
+# Checkouts for worktrees created from the sidebar: <directory>/<repo>/<branch-slug>
+[worktrees]
+directory = "~/.herdr/worktrees"
+
+[ui]
+tab_bar_right = [{ type = "zoom" }]
+window_title = "{workspace}: {tab}"
+sidebar_width = 30
+
+# Spaces panel: bold workspace names
+[ui.sidebar.spaces]
+row_gap = 0
+rows = [
+  ["state_icon", { token = "workspace", bold = true }],
+  ["branch", "git_status"],
+]
+
+# Every pane runs Claude, so the agent name is redundant; show Claude's task title instead
+[ui.sidebar.agents]
+rows = [
+  ["state_icon", "workspace", "tab"],
+  ["terminal_title_stripped"],
+]
+
+# No pop-up notifications and no sounds
+[ui.toast]
+delivery = "off"
+
+[ui.sound]
+enabled = false
+
+# Scratch terminal over the current layout (prefix+t), exit the shell to close it
+[[keys.command]]
+key = "prefix+t"
+type = "popup"
+command = "exec \"${SHELL:-sh}\""
+description = "scratch terminal"
+width = "80%"
+height = "80%"
